@@ -21,7 +21,6 @@ spec:
       labels:
         {{- include "skov-run.selectorLabels" . | nindent 8 }}
     spec:
-      minAvailable: {{ .Values.minAvailable }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
