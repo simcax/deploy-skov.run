@@ -9,7 +9,7 @@ spec:
   source: 
     repoURL: https://github.com/simcax/deploy-skov.run.git
     targetRevision: HEAD
-    path: dev
+    path: skov-run
   destination:
     server: https://kubernetes.default.svc
     namespace: skov-run-prod
