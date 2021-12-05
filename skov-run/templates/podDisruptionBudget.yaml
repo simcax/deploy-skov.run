@@ -1,0 +1,10 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "skov-run.fullname" . }}-pdb
+  namespace: {{ .Values.namespace }}
+  labels: {{- include "skov-run.selectorLabels" . | nindent 8 }}
+spec:
+  selector: 
+    matchLabels: {{- include "skov-run.selectorLabels" . | nindent 6 }}
+  minAvailable: {{ .Values.minAvailable }}
