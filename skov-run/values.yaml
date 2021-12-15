@@ -10,7 +10,7 @@ image:
   repository: ghost
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "4.5"
+  tag: "4.27.2"
 
 content:
   PersistentVolume:
