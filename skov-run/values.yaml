@@ -59,7 +59,9 @@ service:
 
 ingress:
   enabled: true
+  ingressClass: nginx
   annotations: 
+    cert-manager.io/cluster-issuer: cloudflare-issuer
     nginx.ingress.kubernetes.io/proxy-body-size: "50m"
     nginx.org/proxy-connect-timeout: "30s"
     nginx.org/proxy-read-timeout: "20s"
@@ -73,10 +75,17 @@ ingress:
         backend:
           serviceName: skov-run-ghost
           servicePort: 80
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    - host: skov.run
+      paths:
+      - path: /
+        backend:
+          serviceName: skov-run-ghost
+          servicePort: 80
+  tls: 
+    - secretName: www-skov-run-tls
+      hosts:
+        - www.skov.run
+        - skov.run
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
