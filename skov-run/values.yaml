@@ -25,7 +25,7 @@ content:
     persistentVolumeClaim:
       Name: skovrun-local-content-volume
     nfsServer:
-      ip: 172.20.20.22
+      ip: 172.20.20.210
 
 imagePullSecrets: []
 nameOverride: ""
