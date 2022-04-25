@@ -14,7 +14,7 @@ image:
 
 content:
   PersistentVolume:
-    Name: content
+    Name: contentnfs
     capacity: 100M
     nodeAffinity: ubuntu-k8s-0
     path: "/data/nfs/skov-ghost-data/"
