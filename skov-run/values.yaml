@@ -23,7 +23,7 @@ content:
     livenessprobeInitialDelaySeconds: 30
     livenessprobePeriodSeconds: 10
     persistentVolumeClaim:
-      Name: skovrun-local-content-volume
+      Name: skovrun-local-content-volume-nfs
     nfsServer:
       ip: 172.20.20.210
 
